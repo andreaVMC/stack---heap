@@ -3,11 +3,51 @@
     <head>
         <title>Stack & Heap</title>
         <link rel="stylesheet" href="CSS/index.css">
+        <link rel="stylesheet" href="CSS/lightDarkMode.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     </head>
     <body>
         <div class="front-page">
-            <div class="nav-bar"></div>
-            <h1 class="titolo-front-page">Stack & Heap</h1>
+            <div class="nav-bar">
+                <div class="nav-logo">
+                    <img class="logo" src="IMG/icon.png">
+                </div>
+                <div class="nav-options">
+                    <p>Home</p>
+                    <p><a href="#stack">Stack</a></p>
+                    <p>Heap</p>
+                    <p>Pratica</p>
+                    <p>Credits</p>
+                    <p><input type="checkbox" class="l" id="mode" checked></p>
+                </div>
+            </div>
+            <h1 class="titolo-front-page"><d><a href="#stack">Stack</a></d> & <d>Heap</d></h1>
+            <a href="#stack" class="scendi">&#8964;</a>
+        </div>
+        <div class="Stack size" id="stack">
+            <h1 class="stack_title">Stack</h1>
+            <div class="stack_contente">
+                <div class="stack_capitolo size">
+                    <h2 class="stack_capitolo_titolo">
+                        Funzionamento
+                    </h2>
+                    <div class="stack_capitolo_content">
+                        <div class="stack_capitolo_contenitore_testo size">
+                            <p class="stack_capitolo_testo">
+                            Lo stack in memoria funziona come una pila: i dati vengono inseriti e rimossi dallo stack in modo LIFO. Il software può accedere ai dati presenti nello stack solo in cima alla pila, ovvero all'ultimo dato inserito. I dati vengono quindi inseriti e rimossi in modo sequenziale e viene gestito dal sistema operativo in automatico: non bisogna allocare o liberare la memoria manualmente.
+                            Gli elementi allocati hanno ciascuno un indirizzo assoluto, che tengono fino alla fine dell’esecuzione del blocco.
+                            </p>
+                        </div>
+                        <div class="stack_capitolo_contenitore_immagine size">
+                            <img src="IMG/img_prova.png" alt="" class="stack_capitolo_immagine">
+                        </div>
+                    </div>
+                </div>
+                <div class="stack_capitolo size"></div>
+                <div class="stack_capitolo size"></div>
+                <div class="stack_capitolo size"></div>
+            </div>
         </div>
     </body>
+    <script src="JS/index.js"></script>
 </html>
