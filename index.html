@@ -7,27 +7,31 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     </head>
     <body>
-        <div class="front-page">
+        <!--front page-->
+        <div class="front-page size" id="home">
             <div class="nav-bar">
                 <div class="nav-logo">
-                    <img class="logo" src="IMG/icon.png">
+                    <a href="#home"><img class="logo" src="IMG/icon.png"></a>
                 </div>
                 <div class="nav-options">
-                    <p>Home</p>
+                    <p><a href="#home">Home</a></p>
                     <p><a href="#stack">Stack</a></p>
                     <p><a href="#pratica">Pratica</a></p>
                     <p><a href="#heap">Heap</a></p>
-                    <p>Credits</p>
+                    <p><a href="#credits">Crediti</a></p>
                     <p><input type="checkbox" class="l" id="mode" checked></p>
                 </div>
             </div>
+            <div class="shadow"></div>
             <h1 class="titolo-front-page"><d><a href="#stack">Stack</a></d> & <d><a href="#heap">Heap</a></d></h1>
             <a href="#stack" class="scendi">&#8964;</a>
         </div>
+
+        <!--Stack-->
         <div class="Stack size" id="stack">
             <h1 class="stack_title">Stack</h1>
             <div class="stack_contente">
-                <div class="stack_capitolo size"><!--funzionamento-->
+                <div class="stack_capitolo size"><!--come funziona-->
                     <h2 class="stack_capitolo_titolo">
                         Come funziona
                     </h2>
@@ -55,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="stack_capitolo size"><!--salvataggio dei dati-->
+                <div class="stack_capitolo size"><!--memorizzazione valori-->
                     <h2 class="stack_capitolo_titolo">
                         Metodo di allocazione dei dati
                     </h2>
@@ -109,7 +113,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="stack_capitolo size">
+                <div class="stack_capitolo size"><!--caratteristiche-->
                     <h2 class="stack_capitolo_titolo">
                         Caratteristiche
                     </h2>
@@ -148,7 +152,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="stack_capitolo" id="pratica">
+                <div class="stack_capitolo" id="pratica"> <!--pratica-->
                     <h2 class="stack_capitolo_titolo">
                         Visualizzazione pratica
                     </h2>
@@ -158,30 +162,59 @@
             </div>
         </div>
 
+        <!--Heap-->
         <div class="Heap size" id="heap">
             <h1 class="heap_title">Heap</h1>
             <div class="heap_contente">
                 <div class="heap_capitolo size"><!--funzionamento-->
                     <h2 class="heap_capitolo_titolo">
-                        Funzionamento
+                        Come funziona
                     </h2>
                     <div class="heap_capitolo_content">
                         <div class="heap_capitolo_contenitore_testo size">
                             <p class="heap_capitolo_testo size">
-                                Lo stack è una struttura dati che funziona come una pila, ovvero i dati vengono 
-                                inseriti e rimossi seguendo un ordine LIFO (Last-In-First-Out). Ciò significa che 
-                                l'ultimo dato inserito sarà il primo a essere rimosso. Il software può accedere 
-                                solo ai dati presenti in cima alla pila, poiché i dati vengono gestiti in modo sequenziale. 
-                                Questo significa che il sistema operativo si occupa automaticamente di allocare 
-                                e liberare la memoria in modo tale da gestire la struttura del "lo stack in memoria".
-                                Ciascun elemento inserito nello stack ha un indirizzo assoluto, che viene 
-                                mantenuto fino alla fine dell'esecuzione del blocco di codice in cui lo 
-                                stack viene utilizzato.
-                                In sintesi, lo stack in memoria è una struttura dati che offre un modo efficiente 
-                                per gestire i dati in modo sequenziale, senza la necessità di allocare o liberare 
-                                manualmente la memoria. Il software può accedere solo ai dati in cima alla pila, 
-                                e ciascun elemento ha un indirizzo assoluto che viene mantenuto fino alla 
-                                fine dell'esecuzione del blocco di codice.
+                                L'Heap è un'area di memoria riservata a ciascun programma in esecuzione che consente di accedere a un 
+                                indirizzo di memoria in modo indipendente dalla sua posizione, a differenza dello Stack. Quando 
+                                inizializziamo variabili globali o memorizziamo dati in fase di runtime, abbiamo bisogno di un'area 
+                                di memoria visibile a tutti, come nel caso delle variabili globali, oppure senza una dimensione definita. 
+                                In questi casi, salviamo i dati all'interno di celle di memoria dell'Heap, identificate da un indirizzo, 
+                                che possiamo riutilizzare in futuro. Inoltre, dobbiamo gestire questa area di memoria, liberando quelle celle 
+                                che non sono più associate a un indirizzo e che quindi non sono più necessarie per il programma.
+                            </p>
+                        </div>
+                        <div class="heap_capitolo_contenitore_immagine size">
+                            <img src="IMG/img_prova.png" alt="" class="heap_capitolo_immagine">
+                        </div>
+                        <div class="heap_sottocapitolo_content">
+                            <div class="heap_sottocapitolo_contenitore_testo"> <!--garbage collection-->
+                                <p class="heap_titolo_sottocapitolo">Garbage collection</p>
+                                <p class="heap_sottocapitolo_testo">
+                                    Il processo di gestione dell'area di memoria dell'Heap prevede la necessità di individuare le celle di memoria 
+                                    che non sono più utilizzate dal programma per liberarle e renderle disponibili ad altri programmi. 
+                                    In linguaggio C, ad esempio, per deallocare la memoria dinamicamente allocata durante l'esecuzione del programma 
+                                    è necessario utilizzare la funzione free(). Invece, in linguaggi come Java, esiste un processo automatico di 
+                                    garbage collection, che si occupa di individuare e liberare le celle di memoria a cui non è più associato un 
+                                    indirizzo di accesso alla chiusura del programma. In questo modo, non è necessario esplicitamente deallocare 
+                                    la memoria come avviene in C.
+                                </p>
+                            </div>
+                            <div class="heap_sottocapitolo_contenitore_immagine size">
+                                <img src="IMG/garbage-truck.png" alt="garbage collection" class="heap_sottocapitolo_immagine">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="heap_capitolo size"><!--utilizzo-->
+                    <h2 class="heap_capitolo_titolo">
+                        Per cosa viene utilizzato
+                    </h2>
+                    <div class="heap_capitolo_content">
+                        <div class="heap_capitolo_contenitore_testo size">
+                            <p class="heap_capitolo_testo size">
+                                L'area di heap viene utilizzata per la memorizzazione di dati o strutture di dati di cui, in fase di compilazione, 
+                                non si conosce la dimensione e che quindi potrebbero richiedere più o meno spazio. Inoltre, è utilizzata per memorizzare 
+                                variabili globali che devono avere una visibilità a livello generale e poiché l'heap è visibile a tutti i thread del 
+                                programma, è adatto per soddisfare questa esigenza.
                             </p>
                         </div>
                         <div class="heap_capitolo_contenitore_immagine size">
@@ -189,6 +222,75 @@
                         </div>
                     </div>
                 </div>
+                <div class="heap_capitolo size"><!--caratteristiche-->
+                    <h2 class="heap_capitolo_titolo">
+                        Differenze dallo stack
+                    </h2>
+                    <div class="heap_capitolo_content">
+                        <div class="heap_capitolo_contenitore_testo size">
+                            <p class="heap_capitolo_testo">
+                                L'heap richiede una gestione della memoria più complessa rispetto allo Stack, poiché l'allocazione e la 
+                                deallocazione della memoria devono essere gestite manualmente dal programmatore. Ciò comporta una maggior 
+                                complessità in fase di esecuzione del programma rispetto allo Stack. Tuttavia, l'heap non pone limiti 
+                                alla quantità di memoria che può essere allocata, il che lo rende molto versatile in relazione alle esigenze 
+                                di memoria del programma.
+                            </p>
+                            <div class="heap_sottocapitolo_contenitore_testo">
+                                <p class="heap_titolo_sottocapitolo">Pro</p>
+                                <p class="heap_sottocapitolo_testo">
+                                    L'Heap offre un accesso più rapido ai dati del programma in quanto non deve seguire una struttura FIFO; 
+                                    inoltre, riduce l'overhead di gestione delle risorse e semplifica la gestione della memoria condivisa. 
+                                    Grazie alla sua capacità di gestire la memoria in modo efficace ed efficiente, l'Heap è utilizzato 
+                                    per i programmi che richiedono una grande quantità di memoria e/o che hanno necessità 
+                                    di memorizzare dati di dimensioni variabili.
+                                </p>
+                            </div>
+
+                            <div class="heap_sottocapitolo_contenitore_testo">
+                                <p class="heap_titolo_sottocapitolo">Contro</p>
+                                <p class="heap_sottocapitolo_testo">
+                                    La gestione della memoria all'interno dell'heap è più complessa rispetto alla gestione statica, e questo 
+                                    può comportare un maggiore sforzo da parte del programma. Inoltre, i tempi di accesso ai dati all'interno 
+                                    dell'heap sono generalmente più lenti rispetto alla memoria statica, poiché l'heap richiede un accesso 
+                                    indiretto tramite puntatori.
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="heap_capitolo_contenitore_immagine size">
+                            <img src="IMG/img_prova.png" alt="" class="heap_capitolo_immagine">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--footer-->
+        <div class="footer" id="credits">
+            <div class="credits footer-section size">
+                <h3 class="footer_section_title">Crediti</h3>
+                <ul class="footer_section_content">
+                    <li>github: <a href="https://github.com/andreaVMC/">Andrea Vaccaro</a></li>
+                    <li>email: <a href="mailto:vaccaroandrea1227@gmail.com">vaccaroandrea1227@gmail.com</a></li>
+                    <li>autore: <a>Andrea Vaccaro</a></li>
+                </ul>
+            </div>
+            <div class="fonti footer-section size">
+                <h3 class="footer_section_title">Fonti</h3>
+                <ul class="footer_section_content">
+                    <li><a href="http://www.di.unito.it/~bono/Didattica/aa0910/ProgIeLabB/Slide/9-stack.pdf">PDF Uni. Torino</a></li>
+                    <li><a href="http://pages.di.unipi.it/ferrari/CORSI/AP/LEZIONI-OLD/LEZIONI/heap.pdf">PDF Uni. Pisa (dipartimento informatica)</a></li>
+                    <li><a href="https://boracchi.faculty.polimi.it/teaching/InfoA/2022_Lez13_Memoria_Dinamica_Liste.pdf">PDF Uni. Polimi</a></li>
+                    <li><a href="https://www.flaticon.com/">icone</a></li>
+                    <li><a href="https://people.engr.tamu.edu/j-welch/teaching/211.s01/s013-031.pdf">PDF Uni. Texas A&M </a></li>
+                    <li><a href="https://github.com/JkHuger">dark/ligth mode ispiration design</a></li>
+                </ul>
+            </div>
+            <div class="opensource footer-section">
+                <h3 class="footer_section_title">Open source</h3>
+                <ul class="footer_section_content">
+                    <li><a href="https://github.com/andreaVMC/stack---heap">scarica questo sito</a></li>
+                </ul>
             </div>
         </div>
     </body>
