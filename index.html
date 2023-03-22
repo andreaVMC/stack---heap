@@ -15,37 +15,180 @@
                 <div class="nav-options">
                     <p>Home</p>
                     <p><a href="#stack">Stack</a></p>
-                    <p>Heap</p>
-                    <p>Pratica</p>
+                    <p><a href="#pratica">Pratica</a></p>
+                    <p><a href="#heap">Heap</a></p>
                     <p>Credits</p>
                     <p><input type="checkbox" class="l" id="mode" checked></p>
                 </div>
             </div>
-            <h1 class="titolo-front-page"><d><a href="#stack">Stack</a></d> & <d>Heap</d></h1>
+            <h1 class="titolo-front-page"><d><a href="#stack">Stack</a></d> & <d><a href="#heap">Heap</a></d></h1>
             <a href="#stack" class="scendi">&#8964;</a>
         </div>
         <div class="Stack size" id="stack">
             <h1 class="stack_title">Stack</h1>
             <div class="stack_contente">
-                <div class="stack_capitolo size">
+                <div class="stack_capitolo size"><!--funzionamento-->
                     <h2 class="stack_capitolo_titolo">
-                        Funzionamento
+                        Come funziona
+                    </h2>
+                    <div class="stack_capitolo_content" style="display:grid;grid-template-columns: 2fr 1fr;">
+                        <div class="stack_capitolo_contenitore_testo size">
+                            <p class="stack_capitolo_testo">
+                                Lo stack è una struttura dati che funziona come una pila, ovvero i dati vengono 
+                                inseriti e rimossi seguendo un ordine LIFO (Last-In-First-Out). Ciò significa che 
+                                l'ultimo dato inserito sarà il primo a essere rimosso. Il software può accedere 
+                                solo ai dati presenti in cima alla pila, poiché i dati vengono gestiti in modo sequenziale. 
+                                Questo significa che il sistema operativo si occupa automaticamente di allocare 
+                                e liberare la memoria in modo tale da gestire la struttura del "lo stack in memoria".
+                                Ciascun elemento inserito nello stack ha un indirizzo assoluto, che viene 
+                                mantenuto fino alla fine dell'esecuzione del blocco di codice in cui lo 
+                                stack viene utilizzato.
+                                In sintesi, lo stack in memoria è una struttura dati che offre un modo efficiente 
+                                per gestire i dati in modo sequenziale, senza la necessità di allocare o liberare 
+                                manualmente la memoria. Il software può accedere solo ai dati in cima alla pila, 
+                                e ciascun elemento ha un indirizzo assoluto che viene mantenuto fino alla 
+                                fine dell'esecuzione del blocco di codice.
+                            </p>
+                        </div>
+                        <div class="stack_capitolo_contenitore_immagine size" style="display: flex;">
+                            <img src="IMG/img_prova.png" alt="" class="stack_capitolo_immagine">
+                        </div>
+                    </div>
+                </div>
+                <div class="stack_capitolo size"><!--salvataggio dei dati-->
+                    <h2 class="stack_capitolo_titolo">
+                        Metodo di allocazione dei dati
                     </h2>
                     <div class="stack_capitolo_content">
                         <div class="stack_capitolo_contenitore_testo size">
                             <p class="stack_capitolo_testo">
-                            Lo stack in memoria funziona come una pila: i dati vengono inseriti e rimossi dallo stack in modo LIFO. Il software può accedere ai dati presenti nello stack solo in cima alla pila, ovvero all'ultimo dato inserito. I dati vengono quindi inseriti e rimossi in modo sequenziale e viene gestito dal sistema operativo in automatico: non bisogna allocare o liberare la memoria manualmente.
-                            Gli elementi allocati hanno ciascuno un indirizzo assoluto, che tengono fino alla fine dell’esecuzione del blocco.
+                                Ogni volta che viene eseguita una funzione o un blocco di codice in un programma, viene 
+                                creato uno spazio nella memoria del computer chiamato "record di attivazione" per contenere 
+                                le variabili locali di quel blocco. Questo record di attivazione viene quindi aggiunto alla 
+                                pila dello stack del programma.
                             </p>
+                            <div class="stack_sottocapitolo_contenitore_testo">
+                                <p class="stack_titolo_sottocapitolo">Function()</p>
+                                <p class="stack_sottocapitolo_testo">
+                                    Ogni volta che viene chiamata una funzione all'interno di un programma, il sistema salva 
+                                    lo stato corrente del contesto di esecuzione, che può includere i registri della CPU e lo 
+                                    stack, nella memoria dello stack. Successivamente, viene creato un nuovo frame nello stack 
+                                    per la funzione chiamata, contenente le variabili locali statiche e i parametri della funzione.
+                                    Il programma quindi esegue la funzione utilizzando l'ultimo frame inserito nello stack, come 
+                                    nella gestione di una pila. Durante l'esecuzione della funzione, il programma può aggiungere 
+                                    o rimuovere elementi dallo stack per gestire le variabili locali o le chiamate successive ad 
+                                    altre funzioni.
+                                    Quando la funzione termina, il frame corrispondente viene rimosso dallo stack e il frame in 
+                                    cima torna a essere quello della funzione chiamante. In questo modo, il programma può 
+                                    continuare ad eseguire la funzione chiamante
+                                </p>
+                            </div>
+                            <div class="stack_sottocapitolo_contenitore_testo">
+                                <p class="stack_titolo_sottocapitolo">Iterator()</p>
+                                <p class="stack_sottocapitolo_testo">
+                                    Quando vengono utilizzati blocchi di codice come if, while e for all'interno di una funzione, 
+                                    le variabili locali definite in quei blocchi vengono allocate nello stack insieme alle altre 
+                                    variabili locali della funzione chiamante. Tuttavia, a differenza delle variabili locali della 
+                                    funzione, queste variabili non hanno un record di attivazione proprio.
+                                    Invece, queste variabili locali condividono il record di attivazione della funzione chiamante. 
+                                </p>
+                            </div>
+                            <div class="stack_sottocapitolo_contenitore_testo">
+                                <p class="stack_titolo_sottocapitolo">Return()</p>
+                                <p class="stack_sottocapitolo_testo">
+                                    Quando una funzione viene chiamata all'interno di un programma, l'indirizzo di memoria 
+                                    dell'istruzione successiva alla chiamata della funzione, noto come "indirizzo di ritorno", 
+                                    viene salvato nello stack. Questa operazione è necessaria perché una volta che la funzione ha 
+                                    terminato l'esecuzione, il controllo deve essere restituito al punto di esecuzione precedente, 
+                                    ovvero al punto in cui è stata effettuata la chiamata della funzione.
+                                </p>
+                            </div>
                         </div>
                         <div class="stack_capitolo_contenitore_immagine size">
                             <img src="IMG/img_prova.png" alt="" class="stack_capitolo_immagine">
                         </div>
                     </div>
                 </div>
-                <div class="stack_capitolo size"></div>
-                <div class="stack_capitolo size"></div>
-                <div class="stack_capitolo size"></div>
+                <div class="stack_capitolo size">
+                    <h2 class="stack_capitolo_titolo">
+                        Caratteristiche
+                    </h2>
+                    <div class="stack_capitolo_content">
+                        <div class="stack_capitolo_contenitore_testo size">
+                            
+                            <div class="stack_sottocapitolo_contenitore_testo">
+                                <p class="stack_titolo_sottocapitolo">Pro</p>
+                                <p class="stack_sottocapitolo_testo">
+                                    I vantaggi dello stack sono principalmente legati alla sicurezza: questo è dovuto sia alla gestione 
+                                    automatica della memoria, che prevede un'allocazione e una deallocazione dello spazio utilizzato, 
+                                    sia alla gestione eseguita dal sistema operativo che limita l'accesso ad aree di memoria riservate.
+                                    In secondo luogo, lo stack è molto veloce grazie alla sua struttura LIFO (last in first out), 
+                                    ovvero a pila. Questo significa che l'ultimo elemento inserito nello stack viene il primo a essere 
+                                    rimosso, semplificando la gestione della memoria e riducendo i tempi di accesso.
+                                    In contrasto con l'heap, che gestisce la memoria in modo più flessibile, lo stack è caratterizzato 
+                                    da una struttura rigida e predefinita, il che lo rende più veloce e sicuro.
+                                </p>
+                            </div>
+
+                            <div class="stack_sottocapitolo_contenitore_testo">
+                                <p class="stack_titolo_sottocapitolo">Contro</p>
+                                <p class="stack_sottocapitolo_testo">
+                                    D'altra parte, i limiti dello stack sono principalmente legati alla dimensione fissa della memoria 
+                                    resa disponibile ad un programma. Questo può portare a un uso inefficace della memoria, poiché spesso 
+                                    i blocchi di memoria allocati possono essere più grandi del necessario, occupando spazio prezioso. 
+                                    Inoltre, c'è il rischio di Overflow, ovvero di eccedere lo spazio massimo di memoria resa disponibile 
+                                    dallo stack. Questo può verificarsi quando vengono utilizzati blocchi di codice complessi o funzioni 
+                                    ricorsive che richiedono una grande quantità di memoria.
+                                </p>
+                            </div>
+
+                        </div>
+                        <div class="stack_capitolo_contenitore_immagine size">
+                            <img src="IMG/img_prova.png" alt="" class="stack_capitolo_immagine">
+                        </div>
+                    </div>
+                </div>
+                <div class="stack_capitolo" id="pratica">
+                    <h2 class="stack_capitolo_titolo">
+                        Visualizzazione pratica
+                    </h2>
+                    <p class="stack_capitolo_testo">A sinistra abbiamo un codice editabile in linguaggio C#, mentre a destra le operazioni  che avvengono nello stack</p>
+                    <iframe class="visualizer" src="https://sharplab.io/#v2:C4LghgzgtgNAJiA1AHwAICYCMBYAUKgZgAIMiBhIgbzyNpONQBYiBZACgEoqa7eBLAHbAiAgLyYADBIDcPXrQGJEs3LwC+eNUA=="></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="Heap size" id="heap">
+            <h1 class="heap_title">Heap</h1>
+            <div class="heap_contente">
+                <div class="heap_capitolo size"><!--funzionamento-->
+                    <h2 class="heap_capitolo_titolo">
+                        Funzionamento
+                    </h2>
+                    <div class="heap_capitolo_content">
+                        <div class="heap_capitolo_contenitore_testo size">
+                            <p class="heap_capitolo_testo size">
+                                Lo stack è una struttura dati che funziona come una pila, ovvero i dati vengono 
+                                inseriti e rimossi seguendo un ordine LIFO (Last-In-First-Out). Ciò significa che 
+                                l'ultimo dato inserito sarà il primo a essere rimosso. Il software può accedere 
+                                solo ai dati presenti in cima alla pila, poiché i dati vengono gestiti in modo sequenziale. 
+                                Questo significa che il sistema operativo si occupa automaticamente di allocare 
+                                e liberare la memoria in modo tale da gestire la struttura del "lo stack in memoria".
+                                Ciascun elemento inserito nello stack ha un indirizzo assoluto, che viene 
+                                mantenuto fino alla fine dell'esecuzione del blocco di codice in cui lo 
+                                stack viene utilizzato.
+                                In sintesi, lo stack in memoria è una struttura dati che offre un modo efficiente 
+                                per gestire i dati in modo sequenziale, senza la necessità di allocare o liberare 
+                                manualmente la memoria. Il software può accedere solo ai dati in cima alla pila, 
+                                e ciascun elemento ha un indirizzo assoluto che viene mantenuto fino alla 
+                                fine dell'esecuzione del blocco di codice.
+                            </p>
+                        </div>
+                        <div class="heap_capitolo_contenitore_immagine size">
+                            <img src="IMG/img_prova.png" alt="" class="heap_capitolo_immagine">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
